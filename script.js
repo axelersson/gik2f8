@@ -42,15 +42,14 @@ const filteredList = [];
     const title = bookList[i].title.toLowerCase();
 
     if(title.indexOf(searchTerm.toLowerCase()) >= 0 ){
-        console.log('match?');
         filteredList.push(bookList[i])
     }
 }
    console.log(filteredList);
 
 }
-function renderBookList() {
-
+function renderBookList(list) {
+    console.log(list);
 }
 
-searchBooks('oliver');
+searchBooks('e');
