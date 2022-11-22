@@ -1,7 +1,5 @@
 'use strict';
 console.log('test');
-
-const searchInput = null;
 const bookList = [
     {
       id: 1,
@@ -14,21 +12,31 @@ const bookList = [
       title: 'Hamlet'
     }
   ];
-  
-const handleKeyPress = () => {
-    /*  Ta emot/läsa av värdet i inputfältet.
-        Skicka värdet till searchBooks
-        searchBooks returnerar en filtrerad lista.
-        Filtrerade listan sickas till renderBookList
-    */
 
-    console.log('Handle keypress')
+// const searchInput = document.children[0].children[1].children[1].children[1];
+const searchField = document.getElementById('searchField');
+console.log(searchField)
+searchField.addEventListener("keyup", handleKeyPress);
+/* keydown, keyup */
+
+function handleKeyPress(e) {
+    searchBooks(e.target.value);
 }
+
+// const handleKeyPress = () => {
+//     /*  Ta emot/läsa av värdet i inputfältet.
+//         Skicka värdet till searchBooks
+//         searchBooks returnerar en filtrerad lista.
+//         Filtrerade listan sickas till renderBookList
+//     */
+
+//     console.log('Handle keypress')
+// }
 
 function test(func){
     func();
 }
-test(handleKeyPress)
+//test(handleKeyPress)
 function searchBooks(searchTerm){
     /*  Loopa igenom booklist.
         För varje varv i loopen, ta det aktuella elementet (boken)
@@ -45,11 +53,10 @@ const filteredList = [];
         filteredList.push(bookList[i])
     }
 }
-   console.log(filteredList);
+   renderBookList(filteredList);
 
 }
 function renderBookList(list) {
     console.log(list);
 }
 
-searchBooks('e');
