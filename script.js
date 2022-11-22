@@ -43,7 +43,7 @@ const filteredList = [];
 
     if(title.indexOf(searchTerm.toLowerCase()) >= 0 ){
         console.log('match?');
-        filteredList.push(bookList[0])
+        filteredList.push(bookList[i])
     }
 }
    console.log(filteredList);
